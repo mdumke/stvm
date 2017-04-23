@@ -1,0 +1,47 @@
+.wrapper {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.frame {
+  display: flex;
+  height: 450px;
+  margin-bottom: 15px;
+}
+
+.display-area {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.main-buttons {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.main-buttons__left {
+  width: 85%;
+}
+
+.main-buttons__right {
+  width: 15%;
+}
+
+.input-small {
+  max-width: 60px;
+}
+
+.letter-form {
+}
+
+.letter-form__button {
+  position: absolute;
+  right: 15px;
+}

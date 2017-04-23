@@ -3,8 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-  Loading...
+  <div class="container">
+    <div class="wrapper">
+      <header class="page-header">
+        <h1 class="text-center">STVM training</h1>
+        <p>Some random text, or maybe not so random, but a proper sencence at least, not just words, because reading the blah is so much better than reading that stupid lorem ipsum.</p>
+      </header>
+
+      <div id="app">
+        <div id="frame" class="frame card">
+          <div id="display-area" class="display-area card"></div>
+        </div>
+
+        <div class="btn-group main-buttons">
+          <button type="button" class="btn btn-success main-buttons__left">Flash (click or hit return)</button>
+          <button type="button" class="btn btn-secondary main-buttons__right">Settings</button>
+        </div>
+
+        <div id="workbench" class="workbench">
+          <div class="letter-form card">
+            <div class="card-block">
+
+              <p>Please enter the respective number of letters you saw:</p>
+
+              <form action="#" class="form-inline">
+                <label class="mr-sm-2" for="s">S</label>
+                <input class="input-small form-control mb-2 mr-sm-4 mb-sm-0" id="s" type="number" placeholder="0">
+
+                <label class="mr-sm-2" for="t">T</label>
+                <input class="input-small form-control mb-2 mr-sm-4 mb-sm-0" id="t" type="number" placeholder="0">
+
+                <label class="mr-sm-2" for="u">U</label>
+                <input class="input-small form-control mb-2 mr-sm-4 mb-sm-0" id="u" type="number" placeholder="0">
+
+                <button class="btn btn-success letter-form__button" type="submit">Submit</button>
+              </form>
+
+            </div>
+          </div>
+
+          <div class="letter-form card">
+            <div class="card-block">
+
+              <p>Please enter the respective number of letters you saw:</p>
+
+              <form action="#" class="form-inline">
+                <div class="form-group has-success">
+                  <label class="mr-sm-2" for="s">S</label>
+                  <input class="input-small form-control form-control-success mb-2 mr-sm-4 mb-sm-0" id="s" type="text" placeholder="0">
+                </div>
+
+                <div class="form-group has-danger">
+                  <label class="mr-sm-2" for="t">T</label>
+                  <input class="input-small form-control form-control-danger mb-2 mr-sm-4 mb-sm-0" id="t" type="text" placeholder="0">
+                </div>
+
+                <div class="form-group has-danger">
+                  <label class="mr-sm-2" for="u">U</label>
+                  <input class="input-small form-control form-control-danger mb-2 mr-sm-4 mb-sm-0" id="u" type="text" placeholder="0">
+                </div>
+
+                <button class="btn btn-success letter-form__button" type="submit">Done</button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
