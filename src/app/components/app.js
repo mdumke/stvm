@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { sample } from 'lodash'
 
 import ButtonPanel from './button-panel'
 import DisplayArea from './display-area'
@@ -10,13 +11,13 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      letters: [
-        {
-          letter: 'S',
-          top: 20,
-          left: 40
-        }
-      ]
+      settings: {
+        availableLetters: ['S', 'T', 'U'],
+        numLetters: 4,
+        flashDuration: 500 /* ms */
+      },
+      flashing: false,
+      letters: []
     }
   }
 
@@ -24,10 +25,12 @@ export default class App extends Component {
     return (
       <div>
         <div id="frame" className="frame card">
-          <DisplayArea letters={this.state.letters} />
+          <DisplayArea
+            flashing={this.state.flashing}
+            letters={this.state.letters} />
         </div>
 
-        <ButtonPanel />
+        <ButtonPanel onFlash={this.handleFlash.bind(this)} />
 
         <div id="workbench" className="workbench">
           <LetterForm />
@@ -36,4 +39,33 @@ export default class App extends Component {
       </div>
     )
   }
+
+  handleFlash () {
+    this.setRandomLetters()
+
+    this.setState({
+      flashing: true
+    })
+
+    setTimeout(() => {
+      this.setState({
+        flashing: false
+      })
+    }, this.state.settings.flashDuration)
+  }
+
+  setRandomLetters () {
+    let letters = []
+
+    for (let i = 0; i < this.state.settings.numLetters; i++) {
+      letters.push({
+        letter: sample(this.state.settings.availableLetters),
+        top: Math.floor(Math.random() * 180),
+        left: Math.floor(Math.random() * 180)
+      })
+    }
+
+    this.setState({ letters })
+  }
+
 }

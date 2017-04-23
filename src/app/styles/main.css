@@ -15,10 +15,20 @@
   margin-bottom: 15px;
 }
 
-.display-area {
+.letter-card {
   width: 200px;
   height: 200px;
   margin: auto;
+}
+
+.display-area {
+  position: relative;
+  opacity: 0;
+}
+
+.display-area__letter {
+  position: absolute;
+  font-size: 1.25rem;
 }
 
 .main-buttons {
@@ -44,4 +54,21 @@
 .letter-form__button {
   position: absolute;
   right: 15px;
+}
+
+.animated-flash {
+  animation-name: animatedFlash;
+  animation-duration: 0ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animatedFlash {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
