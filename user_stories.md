@@ -11,3 +11,4 @@
 - After I fill out the form, I can click 'Done' and get an evaluation and also the original image
 - After I'm done with the review, everything's ready to start the next flash
 - When I click 'settings' the form is exchanged for a settings-dialog
+- I can use the app with my tablet comfortably
