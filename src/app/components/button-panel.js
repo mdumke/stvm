@@ -1,29 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
-export default props => {
-  if (props.gameState !== 'ready') return <div></div>
+export default class ButtonPanel extends Component {
+  componentDidUpdate () {
+    if (this.props.gameState === 'ready') {
+      this.refs.flashButton.focus()
+    }
+  }
 
-  return (
-    <div className="btn-group main-buttons">
-      <button
-        type="button"
-        onClick={props.onFlash}
-        className="btn btn-success main-buttons__left">
+  render () {
+    if (this.props.gameState !== 'ready') return <div></div>
 
-        Flash (click or hit return)
+    return (
+      <div className="btn-group main-buttons">
+        <button
+          type="button"
+          ref="flashButton"
+          onClick={this.props.onFlash}
+          className="btn btn-success main-buttons__left">
 
-      </button>
+          Flash (click or hit return)
 
-      <button
-        type="button"
-        className="btn btn-secondary main-buttons__right">
+        </button>
 
-        <FontAwesome
-          style={{ color: 'gray' }}
-          name="gear" />
+        <button
+          type="button"
+          className="btn btn-secondary main-buttons__right">
 
-      </button>
-    </div>
-  )
+          <FontAwesome
+            style={{ color: 'gray' }}
+            name="gear" />
+
+        </button>
+      </div>
+    )
+  }
 }

@@ -7,7 +7,7 @@
 - [x] After I fill out the form, I can click 'Check' and get an evaluation and also the original image
 - [x] After I'm done with the review, everything's ready to start the next flash
 - [x] During review, I can see the original letters again
-- [ ] I can play the game using only the keyboard
+- [x] I can play the game using only the keyboard
 - [ ] I can adjust the window size
 - [ ] I can choose which letters to display
 - [ ] I can choose how many letters to display

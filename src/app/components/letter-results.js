@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 export default class LetterResults extends Component {
+  componentDidUpdate () {
+    if (this.props.gameState === 'show_results') {
+      this.refs.formButton.focus()
+    }
+  }
+
   renderFields () {
     return this.props.availableLetters.map(letter => {
       const actualNumber = this.getActualCountFor(letter)
@@ -34,7 +40,12 @@ export default class LetterResults extends Component {
           <form onSubmit={this.props.onDone} className='form-inline'>
             {this.renderFields()}
 
-            <button className='btn btn-success letter-form__button' type='submit'>Done</button>
+            <button
+              ref="formButton"
+              className='btn btn-success letter-form__button'
+              type='submit'>
+              Done
+            </button>
           </form>
 
         </div>

@@ -11,6 +11,7 @@ export default class LetterForm extends Component {
             ref={letter}
             id={letter}
             type="text"
+            autoFocus={this.props.letters.indexOf(letter) === 0}
             placeholder="0" />
         </div>
       )
