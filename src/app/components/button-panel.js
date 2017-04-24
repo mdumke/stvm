@@ -2,6 +2,8 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export default props => {
+  if (props.gameState !== 'ready') return <div></div>
+
   return (
     <div className="btn-group main-buttons">
       <button

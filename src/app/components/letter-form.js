@@ -18,6 +18,8 @@ export default class LetterForm extends Component {
   }
 
   render () {
+    if (this.props.gameState !== 'collect_answers') return <div></div>
+
     return (
       <div className="letter-form card">
         <div className="card-block">

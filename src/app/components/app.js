@@ -11,6 +11,8 @@ export default class App extends Component {
     super(props)
 
     this.state = {
+      // ready -> collect_answers -> show_results
+      gameState: 'ready',
       settings: {
         availableLetters: ['S', 'T', 'U'],
         numLetters: 4,
@@ -28,23 +30,29 @@ export default class App extends Component {
         <div id="frame" className="frame card">
           <DisplayArea
             flashing={this.state.flashing}
+            gameState={this.state.gameState}
             letters={this.state.letters} />
         </div>
 
-        <ButtonPanel onFlash={this.handleFlash.bind(this)} />
+        <ButtonPanel
+          gameState={this.state.gameState}
+          onFlash={this.handleFlash.bind(this)} />
 
         <div id="workbench" className="workbench">
           <LetterForm
+            gameState={this.state.gameState}
             onAnswer={this.handleAnswer.bind(this)}
             letters={this.state.settings.availableLetters} />
-          <LetterResults />
+
+          <LetterResults
+            availableLetters={this.state.settings.availableLetters}
+            letters={this.state.letters}
+            answers={this.state.answers}
+            onDone={this.handleDone.bind(this)}
+            gameState={this.state.gameState} />
         </div>
       </div>
     )
-  }
-
-  handleAnswer (answers) {
-    this.setState({answers})
   }
 
   handleFlash () {
@@ -56,9 +64,25 @@ export default class App extends Component {
 
     setTimeout(() => {
       this.setState({
-        flashing: false
+        flashing: false,
+        gameState: 'collect_answers'
       })
     }, this.state.settings.flashDuration)
+  }
+
+  handleAnswer (answers) {
+    this.setState({
+      answers,
+      gameState: 'show_results'
+    })
+  }
+
+  handleDone (event) {
+    event.preventDefault()
+
+    this.setState({
+      gameState: 'ready'
+    })
   }
 
   setRandomLetters () {

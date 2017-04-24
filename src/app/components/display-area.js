@@ -18,13 +18,15 @@ export default class DisplayArea extends Component {
   }
 
   render () {
+    const showLetters =
+      this.props.flashing ||
+      this.props.gameState === 'show_results'
+
     return (
       <div className="card letter-card">
         <div
           id="display-area"
-          className={this.props.flashing ?
-            'display-area animated-flash' :
-            'display-area'}>
+          className={`display-area ${showLetters ? 'animated-flash' : ''}`}>
             {this.renderLetters()}
         </div>
       </div>
