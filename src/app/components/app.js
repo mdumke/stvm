@@ -17,7 +17,8 @@ export default class App extends Component {
         flashDuration: 500 /* ms */
       },
       flashing: false,
-      letters: []
+      letters: [],
+      answers: {}
     }
   }
 
@@ -33,11 +34,17 @@ export default class App extends Component {
         <ButtonPanel onFlash={this.handleFlash.bind(this)} />
 
         <div id="workbench" className="workbench">
-          <LetterForm />
+          <LetterForm
+            onAnswer={this.handleAnswer.bind(this)}
+            letters={this.state.settings.availableLetters} />
           <LetterResults />
         </div>
       </div>
     )
+  }
+
+  handleAnswer (answers) {
+    this.setState({answers})
   }
 
   handleFlash () {
@@ -68,4 +75,7 @@ export default class App extends Component {
     this.setState({ letters })
   }
 
+  componentDidMount () {
+    this.setRandomLetters()
+  }
 }
