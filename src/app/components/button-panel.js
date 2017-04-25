@@ -15,12 +15,19 @@ export default class ButtonPanel extends Component {
       <div className="btn-group main-buttons">
         <button
           type="button"
+          className="btn btn-secondary main-buttons__left">
+
+          <FontAwesome
+            style={{ color: 'gray' }}
+            name="info-circle" />
+        </button>
+
+        <button
+          type="button"
           ref="flashButton"
           onClick={this.props.onFlash}
-          className="btn btn-success main-buttons__left">
-
-          Flash (click or hit return)
-
+          className="btn btn-success main-buttons__middle">
+          Flash
         </button>
 
         <button
@@ -30,7 +37,6 @@ export default class ButtonPanel extends Component {
           <FontAwesome
             style={{ color: 'gray' }}
             name="gear" />
-
         </button>
       </div>
     )

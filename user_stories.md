@@ -8,6 +8,8 @@
 - [x] After I'm done with the review, everything's ready to start the next flash
 - [x] During review, I can see the original letters again
 - [x] I can play the game using only the keyboard
+- [x] Do not show suggestions for form-fields
+- [ ] Disable flash-button while flash is going on
 - [ ] I can adjust the window size
 - [ ] I can choose which letters to display
 - [ ] I can choose how many letters to display

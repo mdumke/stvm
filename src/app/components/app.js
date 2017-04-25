@@ -15,8 +15,8 @@ export default class App extends Component {
       gameState: 'ready',
       settings: {
         availableLetters: ['S', 'T', 'U'],
-        numLetters: 4,
-        flashDuration: 500 /* ms */
+        numLetters: 6,
+        flashDuration: 700 /* ms */
       },
       flashing: false,
       letters: [],
@@ -91,8 +91,8 @@ export default class App extends Component {
     for (let i = 0; i < this.state.settings.numLetters; i++) {
       letters.push({
         letter: sample(this.state.settings.availableLetters),
-        top: Math.floor(Math.random() * 180),
-        left: Math.floor(Math.random() * 180)
+        top: Math.floor(Math.random() * 380),
+        left: Math.floor(Math.random() * 380)
       })
     }
 

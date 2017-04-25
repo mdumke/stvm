@@ -9,16 +9,22 @@
   margin-bottom: 30px;
 }
 
+.page-header__title {
+  margin-bottom: 15px;
+}
+
 .frame {
   display: flex;
   height: 450px;
   margin-bottom: 15px;
+  border: none;
 }
 
 .letter-card {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   margin: auto;
+  border-color: #aaa;
 }
 
 .display-area {
@@ -37,7 +43,11 @@
 }
 
 .main-buttons__left {
-  width: 85%;
+  width: 15%;
+}
+
+.main-buttons__middle {
+  width: 70%;
 }
 
 .main-buttons__right {

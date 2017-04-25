@@ -8,6 +8,7 @@ export default class LetterForm extends Component {
           <label className="mr-sm-2" htmlFor={letter}>{letter}</label>
           <input
             className="input-small form-control mb-2 mr-sm-4 mb-sm-0"
+            name={Math.random()}
             ref={letter}
             id={letter}
             type="text"
