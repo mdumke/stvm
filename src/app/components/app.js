@@ -15,7 +15,7 @@ export default class App extends Component {
       gameState: 'ready',
       settings: {
         availableLetters: ['S', 'T', 'U'],
-        numLetters: 6,
+        numLetters: 7,
         flashDuration: 700 /* ms */
       },
       flashing: false,
